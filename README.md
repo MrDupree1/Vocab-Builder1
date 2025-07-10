@@ -1,30 +1,23 @@
-📚 Vocabulary Builder
+# 📚 Vocabulary Builder
+
 A simple Python application that helps users build and practice their vocabulary by tracking words, definitions, and progress.
 
-🚀 Features
-Add new words and their definitions to your personal vocabulary list.
+## 🚀 Features
+- Add new words and their definitions to your personal vocabulary list.
+- Store and organize words for future practice.
+- Quiz yourself on saved words to reinforce learning.
+- Track your progress over time.
 
-Store and organize words for future practice.
+## 🛠️ Technologies Used
+- Python 3.x
+- (Optional) CSV/JSON for data storage
+- Command-line interface
 
-Quiz yourself on saved words to reinforce learning.
-
-Track your progress over time.
-
-🛠️ Technologies Used
-Python 3.x
-
-(Optional) CSV/JSON for data storage
-
-Command-line interface
-
-📄 Installation
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/vocabulary-builder.git
-cd vocabulary-builder
+## 📄 Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/vocabulary-builder.git
+   cd vocabulary-builder
 Make sure you have Python 3 installed.
 
 Run the application:
