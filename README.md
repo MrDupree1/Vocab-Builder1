@@ -15,16 +15,13 @@ A simple Python application that helps users build and practice their vocabulary
 
 ## 📄 Installation
 1. Clone the repository:
-   ```bash
+   
    git clone https://github.com/your-username/vocabulary-builder.git
    cd vocabulary-builder
 Make sure you have Python 3 installed.
 
 Run the application:
 
-bash
-Copy
-Edit
 python vocab_builder.py
 🎯 How to Use
 Run the script.
@@ -42,9 +39,6 @@ Exit.
 Follow the on-screen prompts!
 
 📂 File Structure
-bash
-Copy
-Edit
 vocabulary-builder/
 │
 ├── vocab_builder.py      # Main Python script
