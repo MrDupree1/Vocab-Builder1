@@ -2,50 +2,77 @@
 
 A simple Python application that helps users build and practice their vocabulary by tracking words, definitions, and progress.
 
-## 🚀 Features
-- Add new words and their definitions to your personal vocabulary list.
-- Store and organize words for future practice.
-- Quiz yourself on saved words to reinforce learning.
-- Track your progress over time.
+---
 
-## 🛠️ Technologies Used
-- Python 3.x
-- (Optional) CSV/JSON for data storage
-- Command-line interface
+## ⚡ Quick Start (3 Steps)
+```bash
+git clone https://github.com/MrDupree1/Vocab-Builder1.git
+cd Vocab-Builder1
+python main.py
+No extra installs needed — just run it and follow the menu prompts.
 
-## 📄 Installation
-1. Clone the repository:
-   
-   git clone https://github.com/your-username/vocabulary-builder.git
-   cd vocabulary-builder
-Make sure you have Python 3 installed.
+🚀 Features
+Add new words and their definitions to your personal vocabulary list.
 
-Run the application:
+Review your saved words from a local file.
 
-python vocab_builder.py
-🎯 How to Use
-Run the script.
+Quiz yourself on saved words to reinforce learning.
 
-Choose an option from the menu:
+🛠 Requirements
+Python 3.x
 
-Add a word & definition.
+No third-party packages required (standard library only)
 
-Review your vocabulary list.
+📦 Installation
+Clone the repository
 
-Take a quiz.
+bash
+git clone https://github.com/MrDupree1/Vocab-Builder1.git
+cd Vocab-Builder1
+(Optional) Create/activate a virtual environment
 
-Exit.
+bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
+No extra dependencies to install.
 
-Follow the on-screen prompts!
+▶️ Usage
+Run the app:
 
-📂 File Structure
-vocabulary-builder/
-│
-├── vocab_builder.py      # Main Python script
-├── words.csv / words.json # Data storage file (if applicable)
-├── README.md              # Project documentation
+bash
+python main.py
+Follow the on-screen menu to:
+
+Add a word & definition
+
+Review your vocabulary list
+
+Take a quiz
+
+Exit
+
+🗂 Data File
+The app reads/writes a simple text file named words.txt in the project folder.
+
+If the file doesn’t exist, create an empty words.txt before running, or the app will create/update it when you save words.
+
+Example lines (format can be one word per line or “word – definition”, depending on how you enter them in the app):
+
+plaintext
+loquacious – tending to talk a great deal
+alacrity – brisk and cheerful readiness
+📂 Project Structure
+plaintext
+Vocab-Builder1/
+├── main.py        # Entry point
+├── words.txt      # Saved vocabulary data file
+├── .gitignore
+└── README.md
 🤝 Contributing
-Pull requests are welcome! Feel free to fork the repository, make changes, and submit a PR.
+Pull requests are welcome!
 
-📄 License
+📜 License
 This project is open-source and available under the MIT License.
