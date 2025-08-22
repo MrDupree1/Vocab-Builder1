@@ -1,70 +1,112 @@
+# main.py — simple text (CLI) version matching gui.py behavior
+from pathlib import Path
 import random
+import sys
 
-def load_words(filepath="words.txt"):
-    words = []
-    try:
-        with open(filepath, "r", encoding="utf-8") as file:
-            for line in file:
-                if ":" in line:
-                    word, definition = line.strip().split(":", 1)
-                    words.append((word.strip(), definition.strip()))
-    except FileNotFoundError:
-        print(f"Error: {filepath} not found.")
-    return words
+WORDS_FILE = Path("words.txt")
+SEPARATORS = [" - ", " – ", " — ", " : "]   # support hyphen, en dash, em dash, colon
+PRIMARY_SEP = " - "
 
-def generate_question(words, num_choices=4):
-    correct_word = random.choice(words)
-    choices = [correct_word]
-    while len(choices) < num_choices:
-        candidate = random.choice(words)
-        if candidate not in choices:
-            choices.append(candidate)
-    random.shuffle(choices)
-    return correct_word, choices
+def ensure_file():
+    if not WORDS_FILE.exists():
+        WORDS_FILE.write_text("", encoding="utf-8")
 
-def run_quiz(words, num_questions=5):
-    score = 0
-    missed = []
+def split_word_def(line: str):
+    for sep in SEPARATORS:
+        if sep in line:
+            w, d = line.split(sep, 1)
+            return w.strip(), d.strip()
+    return line.strip(), ""   # no separator
 
-    for _ in range(num_questions):
-        correct, options = generate_question(words)
-        print(f"\nWhat is the meaning of: '{correct[0]}'?")
-        for i, (word, definition) in enumerate(options):
-            print(f"{i + 1}. {definition}")
+def load_pairs():
+    ensure_file()
+    pairs, seen = [], set()
+    for raw in WORDS_FILE.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        w, d = split_word_def(line)
+        key = w.lower()
+        if key not in seen:
+            seen.add(key)
+            pairs.append((w, d if d else "TBD"))
+    return pairs
 
-        try:
-            answer = int(input("Your choice (1-4): ").strip())
-            if options[answer - 1] == correct:
-                print("✅ Correct!")
-                score += 1
-            else:
-                print(f"❌ Incorrect. Correct answer: {correct[1]}")
-                missed.append(correct)
-        except (ValueError, IndexError):
-            print("⚠️ Invalid input. Skipping question.")
-            missed.append(correct)
+def save_pair(word, definition="TBD"):
+    word = (word or "").strip()
+    definition = (definition or "TBD").strip()
+    if not word:
+        return False, "Word cannot be empty."
+    for w, _ in load_pairs():
+        if w.lower() == word.lower():
+            return False, "That word already exists."
+    with WORDS_FILE.open("a", encoding="utf-8", newline="\n") as f:
+        f.write(f"{word}{PRIMARY_SEP}{definition}\n")
+    return True, f"Saved “{word}”"
 
-    print(f"\nYour Score: {score}/{num_questions}")
-    if missed:
-        print("\nWords to Review:")
-        for word, definition in missed:
-            print(f"- {word}: {definition}")
-
-def main():
-    print("📘 Welcome to the Vocabulary Builder!")
-    words = load_words()
-    if not words:
+def review():
+    pairs = load_pairs()
+    if not pairs:
+        print("Your list is empty. Add words via GUI or load a pack.")
         return
+    print("\n=== Vocabulary List ===")
+    for w, d in pairs:
+        print(f"- {w}: {d}")
+    print(f"Total: {len(pairs)} words\n")
 
+def quiz():
+    pairs = load_pairs()
+    pool = [(w, d) for (w, d) in pairs if d and d.upper() != "TBD"]
+    if not pool:
+        print("\nNo definitions found to quiz on.")
+        print('Make sure lines look like:  word - definition\n')
+        return
+    correct = 0
+    total = 0
+    random.shuffle(pool)
+    for w, d in pool:
+        print("\nDefinition:\n" + d)
+        ans = input("Type the word (or ENTER to quit): ").strip()
+        if not ans:
+            break
+        total += 1
+        if ans.lower() == w.lower():
+            print("✅ Correct!")
+            correct += 1
+        else:
+            print(f"❌ Incorrect. Correct word: {w}")
+    if total:
+        print(f"\nScore: {correct}/{total}\n")
+
+def menu():
     while True:
-        print("\nMenu:\n1. Start Quiz\n2. Exit")
+        print("====== Vocabulary Builder (CLI) ======")
+        print("1) Review words")
+        print("2) Take a quiz")
+        print("3) Add a word (quick)")
+        print("4) Exit")
         choice = input("Choose an option: ").strip()
         if choice == "1":
-            run_quiz(words)
+            review()
         elif choice == "2":
+            quiz()
+        elif choice == "3":
+            w = input("Word: ").strip()
+            if not w:
+                print("Word cannot be empty.\n"); continue
+            d = input("Definition (leave blank for TBD): ").strip() or "TBD"
+            ok, msg = save_pair(w, d)
+            print(msg + "\n")
+        elif choice == "4":
             print("Goodbye!")
-            break
+            return
         else:
-            print("Invalid choice. Please select 1 or 2.")
+            print("Invalid choice.\n")
 
-main()
+if __name__ == "__main__":
+    ensure_file()
+    try:
+        menu()
+    except KeyboardInterrupt:
+        print("\nExiting...")
+        sys.exit(0)

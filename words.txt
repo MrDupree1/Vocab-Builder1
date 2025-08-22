@@ -1,4 +1,163 @@
-eloquent: fluent or persuasive in speaking or writing
-ambiguous: open to more than one interpretation
-benevolent: well meaning and kindly
-candid: truthful and straightforward
+abate – to lessen
+abdicate – to give up power
+abhor – to hate
+absolve – to free from blame
+abstain – to refrain
+abstract – theoretical
+accolade – an award
+acquire – to get
+adept – skilled
+adversity – hardship
+advocate – to support
+affluent – wealthy
+alleviate – to relieve
+aloof – distant, detached
+ambiguous – unclear
+ambitious – having big goals
+amiable – friendly
+analyze – to examine closely
+animosity – hatred
+antagonist – opponent
+apathetic – without feeling
+appease – to calm
+arbitrary – random
+ardent – passionate
+arrogant – conceited
+articulate – able to speak clearly
+ascend – to rise
+aspire – to strive for
+astute – clever
+audible – able to be heard
+augment – to increase
+authentic – genuine
+averse – opposed
+banish – to send away
+belligerent – hostile
+benevolent – kind
+bias – prejudice
+boisterous – noisy, energetic
+bolster – to support
+brevity – shortness
+candid – honest
+capricious – unpredictable
+cathartic – emotionally cleansing
+caustic – sarcastic, biting
+cede – to give up
+censure – to criticize harshly
+chaotic – disorganized
+chronology – order of events
+coerce – to force
+coherent – logical
+coincide – to happen at the same time
+collaborate – to work together
+commend – to praise
+compassion – sympathy
+complacent – self-satisfied
+concise – brief
+condone – to overlook
+confer – to discuss
+conflict – disagreement
+conform – to follow rules
+contemplate – to think deeply
+conundrum – a difficult problem
+copious – abundant
+corroborate – to confirm
+credible – believable
+cursory – quick, superficial
+daunting – intimidating
+debacle – a disaster
+debilitate – to weaken
+deference – respect
+delineate – to describe clearly
+demure – shy, modest
+denounce – to condemn
+depict – to represent
+deplete – to use up
+deride – to mock
+desolate – deserted
+detrimental – harmful
+devise – to plan
+didactic – instructive
+diligent – hardworking
+diminish – to lessen
+discern – to perceive
+discreet – careful
+disdain – contempt
+disparage – to belittle
+disperse – to scatter
+disseminate – to spread widely
+dissent – disagreement
+dissuade – to persuade not to
+divergent – different
+divulge – to reveal
+docile – obedient
+dogmatic – stubborn
+dubious – doubtful
+durable – lasting
+ebullient – enthusiastic
+eccentric – odd
+eclectic – varied
+elaborate – detailed
+elated – overjoyed
+elicit – to draw out
+eloquent – persuasive in speech
+elucidate – to explain
+emaciated – very thin
+embellish – to decorate
+eminent – famous
+empathy – understanding feelings
+empirical – based on experience
+encroach – to intrude
+endorse – to support
+endure – to tolerate
+enigma – a puzzle
+enmity – hatred
+enthrall – to captivate
+enumerate – to list
+enunciate – to speak clearly
+ephemeral – short-lived
+epitome – perfect example
+equanimity – calmness
+equivocate – to be vague
+eradicate – to destroy
+erratic – unpredictable
+erudite – scholarly
+esoteric – understood by few
+estrange – to alienate
+ethereal – delicate, heavenly
+euphemism – mild expression
+euphoria – extreme happiness
+evade – to escape
+evaluate – to assess
+evoke – to bring forth
+exacerbate – to make worse
+exasperate – to annoy
+exceed – to go beyond
+exemplary – outstanding
+exhilarate – to excite
+exonerate – to free from blame
+expedite – to speed up
+explicit – clear
+exploit – to take advantage of
+extol – to praise highly
+extraneous – irrelevant
+extricate – to free from difficulty
+facetious – joking
+fallacy – false belief
+fathom – to understand
+feasible – possible
+feeble – weak
+feign – to pretendcongregate - TBD
+meticulous - showing great attention to detail
+audacious - showing a willingness to take bold risks
+resilient - able to recover quickly from difficulties
+fortify - to strengthen
+frugal - sparing or economical with resources
+gregarious - sociable
+impartial - treating all rivals equally
+lucid - expressed clearly; easy to understand
+pragmatic - dealing with things sensibly and realistically
+succinct - briefly and clearly expressed
+tenacious - very determined; persistent
+venerate - regard with great respect
+vindicate - clear someone of blame or suspicion
