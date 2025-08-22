@@ -1,78 +1,117 @@
-# 📚 Vocabulary Builder
+#  Vocabulary Builder
 
-A simple Python application that helps users build and practice their vocabulary by tracking words, definitions, and progress.
+A Python application that helps users build and practice vocabulary by saving words/definitions, reviewing them, and quizzing. Includes both a **Command-Line Interface (CLI)** and a **Graphical User Interface (GUI)** with support for loading external word packs.
 
 ---
 
-## ⚡ Quick Start (3 Steps)
+##  Quick Start
+
 ```bash
 git clone https://github.com/MrDupree1/Vocab-Builder1.git
 cd Vocab-Builder1
+Run the text version (CLI):
+
+bash
 python main.py
-No extra installs needed — just run it and follow the menu prompts.
+Run the GUI version:
 
-🚀 Features
-Add new words and their definitions to your personal vocabulary list.
+bash
+python gui.py
+No third-party installs needed — everything uses Python’s standard library.
 
-Review your saved words from a local file.
+ Features
+Review your saved words and definitions from a local file (words.txt).
 
-Quiz yourself on saved words to reinforce learning.
+Quiz mode (definition → type the word) with a Reset option.
 
-🛠 Requirements
+Load Pack button in the GUI to import more words from .txt files.
+
+Flexible line parsing: accepts word - definition, word – definition, word — definition, or word : definition.
+
+Beginner-friendly code; works on Windows/macOS/Linux with Python 3.x.
+
+ Requirements
 Python 3.x
 
-No third-party packages required (standard library only)
+Standard library only (no extra packages)
 
-📦 Installation
-Clone the repository
-
+🛠 Installation
 bash
 git clone https://github.com/MrDupree1/Vocab-Builder1.git
 cd Vocab-Builder1
-(Optional) Create/activate a virtual environment
+(Optional) Create a virtual environment:
 
 bash
-python -m venv .venv
 # Windows
-.venv\Scripts\activate
+python -m venv venv
+venv\Scripts\activate
+
 # macOS/Linux
-source .venv/bin/activate
-No extra dependencies to install.
-
-▶️ Usage
-Run the app:
-
+python3 -m venv venv
+source venv/bin/activate
+▶ Usage
+CLI (text version)
 bash
 python main.py
-Follow the on-screen menu to:
+Menu options:
 
-Add a word & definition
-
-Review your vocabulary list
+Review words
 
 Take a quiz
 
+Add a word (quick)
+
 Exit
 
-🗂 Data File
-The app reads/writes a simple text file named words.txt in the project folder.
+GUI
+bash
+python gui.py
+ Load Pack — import a .txt file of words (see format below)
 
-If the file doesn’t exist, create an empty words.txt before running, or the app will create/update it when you save words.
+ Review Words — shows your current list
 
-Example lines (format can be one word per line or “word – definition”, depending on how you enter them in the app):
+ Take Quiz — quizzes you by definition (with Next and Reset)
 
-plaintext
-loquacious – tending to talk a great deal
-alacrity – brisk and cheerful readiness
-📂 Project Structure
-plaintext
+ Data & Packs
+All words are stored in a plain text file at the project root:
+
+words.txt — your personal list (app reads/writes here)
+
+Accepted line formats (any one per line):
+
+arduino
+word - definition
+word – definition
+word — definition
+word : definition
+Word packs live in the packs/ folder. A sample is included:
+
+bash
+packs/sample_pack.txt
+Example contents:
+
+css
+eloquent - fluent or persuasive in speaking or writing
+benevolent - well meaning and kindly
+meticulous - showing great attention to detail
+In the GUI, click Load Pack and select a .txt file to append those words into words.txt.
+Duplicate words are ignored (case-insensitive).
+
+ Project Structure
 Vocab-Builder1/
-├── main.py        # Entry point
-├── words.txt      # Saved vocabulary data file
-├── .gitignore
-└── README.md
-🤝 Contributing
-Pull requests are welcome!
+│-- main.py          # Text-based program (CLI)
+│-- gui.py           # Graphical User Interface (Tkinter)
+│-- words.txt        # Your saved vocabulary list
+│-- packs/
+│   └─ sample_pack.txt  # Example pack (import via GUI)
+│-- README.md
+│-- .gitignore
+ Notes
+Quiz skips entries with missing definitions (e.g., “TBD”).
 
-📜 License
-This project is open-source and available under the MIT License.
+You can mix your own packs; just keep the word - definition style (or the supported separators above).
+
+If words.txt is missing, the app will create it on first save.
+
+ License
+Open-source, MIT-style.
