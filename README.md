@@ -1,59 +1,54 @@
-#  Vocabulary Builder
+# 📚 Vocab Builder
 
-A Python application that helps users build and practice vocabulary by saving words/definitions, reviewing them, and quizzing. Includes both a **Command-Line Interface (CLI)** and a **Graphical User Interface (GUI)** with support for loading external word packs.
+A beginner-friendly Python app to help you **build and practice your vocabulary**. Save words, quiz yourself, and track your progress — now with both a **text version (CLI)** and a **simple GUI** for easier use.
 
 ---
 
-##  Quick Start
+## 🚀 Features  
+- **Add and store words** with definitions in a simple text file (`words.txt`)  
+- **Quiz mode**: Type the word when given the definition, with a **Reset** option  
+- **GUI mode** for a user-friendly experience  
+- **Load external packs** from `.txt` files for quick bulk imports  
+- Runs on **Windows, macOS, and Linux** with **no extra installs** (Python standard library only)
 
+---
+
+## 🛠️ Technologies Used  
+- Python **3.x**  
+- `tkinter` for the GUI (built-in, no extra packages)  
+- Standard library only — **no dependencies**
+
+---
+
+## ⚡ Quick Start  
+
+### 1️⃣ Clone the Repository  
 ```bash
 git clone https://github.com/MrDupree1/Vocab-Builder1.git
 cd Vocab-Builder1
-Run the text version (CLI):
 
-bash
+2️⃣ Run the Text Version (CLI)
 python main.py
-Run the GUI version:
 
-bash
+3️⃣ Run the GUI Version
 python gui.py
-No third-party installs needed — everything uses Python’s standard library.
 
- Features
-Review your saved words and definitions from a local file (words.txt).
+📄 Installation
+Optional: Create a Virtual Environment
 
-Quiz mode (definition → type the word) with a Reset option.
+Windows
 
-Load Pack button in the GUI to import more words from .txt files.
-
-Flexible line parsing: accepts word - definition, word – definition, word — definition, or word : definition.
-
-Beginner-friendly code; works on Windows/macOS/Linux with Python 3.x.
-
- Requirements
-Python 3.x
-
-Standard library only (no extra packages)
-
-🛠 Installation
-bash
-git clone https://github.com/MrDupree1/Vocab-Builder1.git
-cd Vocab-Builder1
-(Optional) Create a virtual environment:
-
-bash
-# Windows
 python -m venv venv
 venv\Scripts\activate
 
-# macOS/Linux
+
+macOS/Linux
+
 python3 -m venv venv
 source venv/bin/activate
-▶ Usage
-CLI (text version)
-bash
-python main.py
-Menu options:
+
+▶️ Usage
+CLI Menu Options
 
 Review words
 
@@ -63,55 +58,36 @@ Add a word (quick)
 
 Exit
 
-GUI
-bash
-python gui.py
- Load Pack — import a .txt file of words (see format below)
+GUI Options
 
- Review Words — shows your current list
+Review your saved words
 
- Take Quiz — quizzes you by definition (with Next and Reset)
+Take a quiz with a Reset option
 
- Data & Packs
-All words are stored in a plain text file at the project root:
+Load .txt packs for more words
 
-words.txt — your personal list (app reads/writes here)
-
-Accepted line formats (any one per line):
-
-arduino
-word - definition
-word – definition
-word — definition
-word : definition
-Word packs live in the packs/ folder. A sample is included:
-
-bash
-packs/sample_pack.txt
-Example contents:
-
-css
-eloquent - fluent or persuasive in speaking or writing
-benevolent - well meaning and kindly
-meticulous - showing great attention to detail
-In the GUI, click Load Pack and select a .txt file to append those words into words.txt.
-Duplicate words are ignored (case-insensitive).
-
- Project Structure
+📂 File Structure
 Vocab-Builder1/
-│-- main.py          # Text-based program (CLI)
-│-- gui.py           # Graphical User Interface (Tkinter)
-│-- words.txt        # Your saved vocabulary list
-│-- packs/
-│   └─ sample_pack.txt  # Example pack (import via GUI)
-│-- README.md
-│-- .gitignore
- Notes
-Quiz skips entries with missing definitions (e.g., “TBD”).
+├── main.py         # CLI version
+├── gui.py          # GUI version
+├── words.txt       # Local storage file for saved words
+├── packs/          # Optional folder for external word packs
+├── .gitignore
+└── README.md
 
-You can mix your own packs; just keep the word - definition style (or the supported separators above).
+🗂 Data File
 
-If words.txt is missing, the app will create it on first save.
+Words are stored in words.txt automatically.
 
- License
-Open-source, MIT-style.
+Supports simple formats like:
+
+loquacious - tending to talk a great deal
+alacrity - brisk and cheerful readiness
+
+🤝 Contributing
+
+Pull requests are welcome! Fork the repo, make your changes, and submit a PR.
+
+📜 License
+
+This project is open-source and available under the MIT License.
